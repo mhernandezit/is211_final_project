@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+  <h1>{% block title %}Vulnerability Dashboard{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h3>Device Inventory</h3>
+            <table class="table">
+                <th scope="col">Vendor Name</th>
+                <th scope="col">Model</th>
+                {% for device in vuln_list %}
+                <tr>
+                    <td>{{ device.0 }}</td>
+                    <td>{{ device.1 }}</td>
+                    <td>{{ device.2 }}</td>
+                    <td>{{ device.3 }}</td>
+                    <td>{{ device.4 }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="btn-group"role="group" aria-label="">
+                <a href="/device/add" button type="button" class="btn btn-primary">Add a device</a></button>
+                <a href="/vulnerability/view" button type="button" class="btn btn-primary">View Vulnerability Matrix</a></button>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %} To Do App - Server Error {% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Server Error</h1>
+    <p>A server error has occured
+        <p><a href="{{ url_for('index') }}">Go Back home</a>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form action="/register" method="post">
+            <input type="text" name="username" placeholder="Username" required="required">
+            <input type="password" name="password" placeholder="Password" required="required">
+            <input class="btn btn-success" type="submit" value="register">
+        </form>
+        <a href="/" button name="Login" type="submit" class="btn btn-primary">Already have an account? login here</a></button>
+    </div>
+{% endblock %}

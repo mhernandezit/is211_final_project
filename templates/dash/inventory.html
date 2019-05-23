@@ -1,0 +1,36 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Vulnerability Inventory {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h3>Vulnerability Inventory</h3>
+            <table class="table">
+                <th scope="col">Vendor Name</th>
+                <th scope="col">Device Name</th>
+                <th scope="col">CVEID</th>
+                <th scope="col">CVSS</th>
+                <th scope="col">References</th>
+                
+                {% for key, value in vuln.iterrows() %}
+                    <option value="{{ value['id'] }}">{{ value['text'] }}</option>
+                {% endfor %}
+                <tr>
+                    <td>{{ value['device.name'] }}</td>
+                    <td>{{ value['name'] }}</td>
+                    <td>{{ value['cveid'] }}</td>
+                    <td>{{ value['cvss'] }}</td>
+                    <td>{{ value['name'] }}</td>
+                    <td>{{ value['name'] }}</td>
+                    <td><a href="/device/{{device['deviceid']}}" class="viewdevice">View</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="btn-group"role="group" aria-label="">
+                <a href="/device/add" button type="button" class="btn btn-primary">Add a device</a></button>
+                <a href="/vulnerability/view" button type="button" class="btn btn-primary">View Vulnerability Matrix</a></button>
+        </div>
+    </div>
+{% endblock %}

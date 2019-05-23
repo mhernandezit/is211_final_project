@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Vulnerability Inventory {% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Vulnerability Inventory</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Index</a></li>
+                <li><a href="/vulnerability/view">View vulnerability</a></li>
+                <li><a href="/search/cve">Search CVE</a></li>
+                <li><a href="/device/add">Add Items to inventory</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register a new user</a></li>
+                <li><a href="/device/add">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+

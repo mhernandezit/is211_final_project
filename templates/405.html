@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %} To Do App - Unauthorized Error {% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Unauthorized Error</h1>
+    <p>An authorized action was taken, please check code
+        <p><a href="{{ url_for('index') }}">Go Back home</a>
+</div>
+{% endblock %}

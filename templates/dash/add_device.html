@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Add a Device{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h3>Add a Device to the inventory</h3>
+        <form class="form form-horizontal" action="/device/add" method="post">
+            <input type="text" name="vendor" placeholder="Vendor" required="required">
+            <input type="text" name="product" placeholder="Product" required="required">
+            <input class="btn btn-success" type="submit" value="Add Device">
+        </form>
+        <a href="/dashboard" button type="button" class="btn btn-primary">Back to Dashboard</a></button>
+    </div>
+{% endblock %}
